@@ -1,0 +1,31 @@
+- MVC
+- REST
+- bootstrap
+
+- modulacion
+- reutilizacion
+- orden
+- simplicidad
+
+DB
+database: base
+
+requerimiento (no utilizar platillas)
+
+1. Login de usuario centrado
+2. Lista de usuarios que muestre las siguientes columnas
+	. username
+	. correo
+	. telefono
+	. acciones
+3. en la columna acciones poner las siguientes funciones
+	. modal ver perfil (permite modificar la informacion )
+	. modal modificar usuario 
+	(puede ser el mismo modal si crees que es mejor para el usuario)
+	. eliminar (eliminado logico) desde el perfil
+
+4. Se espera que te permitas decidir que datos pueden ser modificables o no, 
+cuales deberian ser mostrados en los modals o la lista.
+5. esperamos una interface limpia simple y facil de usar 
+6. el backend se espera 	que sea ordenado y 
+que se utilice buenas practicas de desarrollo 
