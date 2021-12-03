@@ -27,7 +27,7 @@ router.post('/usuarios', (request, response) => {
                     values ('${username}', '${password}', '${perfil_id}', '${correo}', '${telefono}')`;
     connection.query(consult, (error, rows, fields) => {
         if(error) throw error;
-        else response.json({status: 'success'});
+        else response.json({status: 'created success'});
     });
 });
 
@@ -40,7 +40,7 @@ router.put('/usuarios/:id', (request, response) => {
                         where id = '${id}'`;
     connection.query(consult, (error, rows, fields) => {
         if(error) throw error;
-        else response.json({status: 'success'});
+        else response.json({status: 'updated success'});
     });
 });
 
@@ -50,7 +50,7 @@ router.delete('/usuarios/:id', (request, response) => {
     let consult = `delete from usuarios where id = '${id}'`;
     connection.query(consult, (error, rows, fields) => {
         if(error) throw error;
-        else response.json({status: 'success'});
+        else response.json({status: 'deleted success'});
     });
 });
 
