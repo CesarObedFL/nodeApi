@@ -23,8 +23,9 @@ router.get('/usuarios/:id', (request, response) => {
 // method create user
 router.post('/usuarios', (request, response) => {
     const {username, password, perfil_id, correo, telefono} = request.body;
-    let consult = `insert into usuario (username, password, perfil_id, correo, telefono) 
-                    values ('${username}', '${password}', '${perfil_id}', '${correo}', '${telefono}')`;
+    console.log(username);
+    let consult = `insert into usuarios (username, password, perfil_id, correo, telefono) 
+                    values ('${username}', '${password}', '0', '${correo}', '${telefono}')`;
     connection.query(consult, (error, rows, fields) => {
         if(error) throw error;
         else response.json({status: 'created success'});
@@ -35,7 +36,7 @@ router.post('/usuarios', (request, response) => {
 router.put('/usuarios/:id', (request, response) => {
     const {id} = request.params;
     const {username, password, perfil_id, correo, telefono} = request.body;
-    let consult = `update usuario set username = '${username}', password = '${password}',
+    let consult = `update usuarios set username = '${username}', password = '${password}',
                         perfil_id = '${perfil_id}', correo = '${correo}', telefono = '${telefono}'
                         where id = '${id}'`;
     connection.query(consult, (error, rows, fields) => {
