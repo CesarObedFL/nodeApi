@@ -48,7 +48,8 @@ router.put('/usuarios/:id', (request, response) => {
 // method delete user by id
 router.delete('/usuarios/:id', (request, response) => {
     const {id} = request.params;
-    let consult = `delete from usuarios where id = '${id}'`;
+    //let consult = `delete from usuarios where id = '${id}'`;
+    let consult = `update usuarios set estatus = 0 where id = '${id}'`;
     connection.query(consult, (error, rows, fields) => {
         if(error) throw error;
         else response.json({status: 'deleted success'});
